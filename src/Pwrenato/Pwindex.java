@@ -96,7 +96,9 @@ public class Pwindex {
 
 	public static void main(String[] args) {
 		while (true){
-			switch (Integer.parseInt(JOptionPane.showInputDialog("Escolha Atividade(0 para sair)"))) {
+			String ativ = JOptionPane.showInputDialog("Escolha Atividade(0 para sair)");
+			ativ = (ativ == null) ? "0":ativ;
+			switch (Integer.parseInt(ativ)) {
 			case 1:
 				ativ1();
 				break;
