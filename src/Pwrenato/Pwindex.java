@@ -65,7 +65,7 @@ public class Pwindex {
 				+ obj.calcImc() 
 				+ " ("
 				+ obj.nivelObesidade
-				+ ")", "Primeiro nome", 1);
+				+ ")", "Dados IMC", 1);
 		
 		
 	}
