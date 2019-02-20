@@ -1,5 +1,7 @@
 package Pwrenato;
 
+import java.util.Arrays;
+
 import javax.swing.JOptionPane;
 
 public class Pwindex {
@@ -41,11 +43,55 @@ public class Pwindex {
 		
 	}
 	static void ativ4() {
-		Produto obj = new Produto();
-		obj.valor = Double.parseDouble(JOptionPane.showInputDialog("Insira o valor"));
-		obj.parcelas = Integer.parseInt(JOptionPane.showInputDialog("Insira o numero de parcelas"));
+		String frase;
+		frase = JOptionPane.showInputDialog("Insira os numeros");
 		
-		JOptionPane.showMessageDialog(null, obj.showVrTotal(), "Valor total de pagamento", 1);
+		JOptionPane.showMessageDialog(null, inverter(frase), "Numeros", 1);
+	}
+	static void ativ5() {
+		String frase;
+		frase = JOptionPane.showInputDialog("Insira os numeros");
+		
+		JOptionPane.showMessageDialog(null, ordenar(frase), "Numeros", 1);
+	}
+	static void ativ6() {
+		Pessoa obj = new Pessoa();
+		
+		obj.sexo = JOptionPane.showInputDialog("Insira o sexo(F/M)");
+		obj.altura = Double.parseDouble(JOptionPane.showInputDialog("Insira a altura(em metros)"));
+		obj.peso = Double.parseDouble(JOptionPane.showInputDialog("Insira o peso(em kg)"));
+		
+		JOptionPane.showMessageDialog(null, "O IMC da pessoa é " 
+				+ obj.calcImc() 
+				+ " ("
+				+ obj.nivelObesidade
+				+ ")", "Primeiro nome", 1);
+		
+		
+	}
+	static String inverter(String entrada) {
+		String[] numeros = entrada.split(",");
+		String frase = "";
+		
+		for (int i = numeros.length-1; i >=0 ; i--) {
+			frase = frase +(i==numeros.length-1? "": ",")+ numeros[i];
+		}
+		return frase;
+	}
+	static String ordenar(String entrada) {
+		String[] numeros = entrada.split(",");
+		int[] intNumbers = new int[numeros.length];
+		String frase = "";
+		
+		for (int i = 0; i < numeros.length; i++) {
+			intNumbers[i] = Integer.parseInt(numeros[i]);
+		}
+		Arrays.sort(intNumbers);
+		for (int i = 0; i < intNumbers.length; i++) {
+			frase = frase +(i==0? "": ",")+ intNumbers[i];
+		}
+	
+		return frase;
 	}
 
 	public static void main(String[] args) {
@@ -62,6 +108,12 @@ public class Pwindex {
 				break;
 			case 4:
 				ativ4();
+				break;
+			case 5:
+				ativ5();
+				break;
+			case 6:
+				ativ6();
 				break;
 
 			default:
