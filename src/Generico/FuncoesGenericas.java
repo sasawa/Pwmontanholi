@@ -1,4 +1,4 @@
-package Pwrenato;
+package Generico;
 
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
@@ -11,6 +11,12 @@ public class FuncoesGenericas {
 		
 		return "R$"+decimalFormat.format(vr);
 	}
+	public static String doubleToStr(Double vr) {
+		
+		DecimalFormat decimalFormat = new DecimalFormat("0.##");
+		
+		return decimalFormat.format(vr);
+	}
 	public static Double formatDecimal(Double vr) {
 		
 		BigDecimal numberBigDecimal = new BigDecimal(vr);
@@ -18,6 +24,7 @@ public class FuncoesGenericas {
 		
 		return Double.parseDouble(numberBigDecimal+"");
 	}
+	
 	
 	
 	

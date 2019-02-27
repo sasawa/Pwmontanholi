@@ -1,5 +1,7 @@
 package Pwrenato;
 
+import Generico.FuncoesGenericas;
+
 public class Pessoa {
 	public String nome;
 	public int idade;

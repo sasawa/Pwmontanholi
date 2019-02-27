@@ -1,6 +1,6 @@
 package Pwrenato;
 
-
+import Generico.FuncoesGenericas;
 
 public class Produto {
 	public double valor;
